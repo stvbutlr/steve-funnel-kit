@@ -10,7 +10,7 @@ export interface LeadSubmission extends LeadFormData {
 }
 
 export interface GHLContactPayload {
-  firstName: string;
+  firstName?: string;
   lastName?: string;
   email: string;
   phone?: string;

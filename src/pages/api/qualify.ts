@@ -134,7 +134,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
     // Upsert first (requires contacts.write scope), fall back to lookup
     let contactId: string | undefined;
-    const upsert = await upsertContact({ firstName: '', email, locationId, source: 'Website' }, apiKey);
+    const upsert = await upsertContact({ email, locationId, source: 'Website' }, apiKey);
     if (upsert.success) {
       contactId = upsert.contactId;
     } else if (upsert.statusCode === 401 || upsert.statusCode === 403) {
